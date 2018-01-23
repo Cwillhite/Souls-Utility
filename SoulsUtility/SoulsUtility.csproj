@@ -109,6 +109,7 @@
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Main.storyboard" />
+    <InterfaceDefinition Include="Views\DS2SummonCalc.xib" />
     <InterfaceDefinition Include="Views\DS1SummonCalc.xib" />
   </ItemGroup>
   <ItemGroup>
@@ -128,11 +129,17 @@
     <Compile Include="Controllers\SecondViewController.designer.cs">
       <DependentUpon>SecondViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\DS1\DS1CharBuild.cs" />
-    <Compile Include="Controllers\DS1\DS1Summon.cs" />
     <Compile Include="Controllers\Menu\TabbedMenu.cs" />
     <Compile Include="Controllers\Menu\SplitViewNav.cs" />
     <Compile Include="Controllers\Menu\CustomNav.cs" />
+    <Compile Include="Controllers\DS2\DS2SummonCalcController.cs" />
+    <Compile Include="Controllers\DS2\DS2SummonCalcController.designer.cs">
+      <DependentUpon>DS2SummonCalcController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\DS1\DS1SummonCalcController.cs" />
+    <Compile Include="Controllers\DS1\DS1SummonCalcController.designer.cs">
+      <DependentUpon>DS1SummonCalcController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
