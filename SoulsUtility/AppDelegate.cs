@@ -10,9 +10,6 @@ namespace SoulsUtility
     {
         // class-level declarations
 
-        public static UIStoryboard Storyboard = UIStoryboard.FromName("Main", null);
-        public static UIViewController initialViewController;
-
         public override UIWindow Window
         {
             get;
@@ -24,29 +21,8 @@ namespace SoulsUtility
             // Override point for customization after application launch.
             // If not required for your application you can safely delete this method
 
-            // Code to start the Xamarin Test Cloud Agent
-#if ENABLE_TEST_CLOUD
-			Xamarin.Calabash.Start();
-#endif
-            Window = new UIWindow(UIScreen.MainScreen.Bounds);
-
-            initialViewController = Storyboard.InstantiateInitialViewController() as UIViewController;
-
-            Window.RootViewController = initialViewController;
-            Window.MakeKeyAndVisible();
             return true;
         }
-
-        //public override bool FinishedLaunching(UIApplication app, NSDictionary options)
-        //{
-        //    window = new UIWindow(UIScreen.MainScreen.Bounds);
-        //
-        //    // set our root view controller with the sidebar menu as the apps root view controller
-        //    window.RootViewController = new RootViewController();
-        //
-        //   window.MakeKeyAndVisible();
-        //    return true;
-        //}
 
         public override void OnResignActivation(UIApplication application)
         {

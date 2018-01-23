@@ -7,8 +7,10 @@ namespace SoulsUtility.Controllers
     [Register("TabbedMenu")]
     partial class TabbedMenu : UIKit.UITableView
     {
-        public TabbedMenu()
+        protected TabbedMenu(IntPtr handle) : base(handle)
         {
+            // Note: this .ctor should not contain any initialization logic.
         }
+
     }
 }
