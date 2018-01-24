@@ -13,16 +13,39 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="131" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                    <rect key="frame" x="331" y="311" width="46" height="30"/>
+                    <rect key="frame" x="225" y="241" width="92" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button"/>
+                    <state key="normal" title="Calculate"/>
                     <connections>
                         <action selector="Calc_TouchUpInside:" destination="1" id="262" eventType="touchUpInside"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="396" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                    <rect key="frame" x="33" y="241" width="57" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Text" borderStyle="roundedRect" minimumFontSize="17" id="421" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                    <rect key="frame" x="104" y="241" width="97" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="606" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                    <rect key="frame" x="132" y="358" width="42" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <connections>
                 <outlet property="Calc" destination="131" id="name-outlet-131"/>
+                <outlet property="ResultLabel" destination="606" id="name-outlet-606"/>
+                <outlet property="LevelInput" destination="421" id="name-outlet-421"/>
             </connections>
         </view>
     </objects>

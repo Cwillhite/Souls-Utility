@@ -12,7 +12,12 @@ namespace SoulsUtility
 
         partial void Calc_TouchUpInside(UIButton sender)
         {
-            throw new NotImplementedException();
+            int level = int.Parse(LevelInput.Text);
+            decimal range = 10 + Decimal.Floor((decimal)(.1 * level));
+            int rangeBegin = level - (int)range;
+            int rangeMax = level + (int)range;
+
+            ResultLabel.Text = String.Format("Your summon range is {0}-{1}", rangeBegin, rangeMax);
         }
     }
 }

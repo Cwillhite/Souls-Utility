@@ -24,6 +24,8 @@ namespace SoulsUtility
             return true;
         }
 
+
+
         public override void OnResignActivation(UIApplication application)
         {
             // Invoked when the application is about to move from active to inactive state.
@@ -54,6 +56,7 @@ namespace SoulsUtility
         {
             // Called when the application is about to terminate. Save data, if needed. See also DidEnterBackground.
         }
+
     }
 }
 

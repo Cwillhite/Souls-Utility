@@ -18,6 +18,22 @@ namespace SoulsUtility
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIView Calc { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton Calc { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIPickerView ItemUsed { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITextField LevelInput { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel ResultsLabel { get; set; }
+
         [Action ("Calc_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
         partial void Calc_TouchUpInside (UIKit.UIButton sender);
@@ -32,6 +48,21 @@ namespace SoulsUtility
             if (Calc != null) {
                 Calc.Dispose ();
                 Calc = null;
+            }
+
+            if (ItemUsed != null) {
+                ItemUsed.Dispose ();
+                ItemUsed = null;
+            }
+
+            if (LevelInput != null) {
+                LevelInput.Dispose ();
+                LevelInput = null;
+            }
+
+            if (ResultsLabel != null) {
+                ResultsLabel.Dispose ();
+                ResultsLabel = null;
             }
         }
     }
