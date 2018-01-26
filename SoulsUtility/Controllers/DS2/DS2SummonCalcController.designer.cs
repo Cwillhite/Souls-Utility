@@ -20,10 +20,6 @@ namespace SoulsUtility
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton Calc { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIPickerView ItemUsed { get; set; }
 
         [Outlet]

@@ -6,6 +6,8 @@ namespace SoulsUtility
 {
     public partial class FirstViewController : UIViewController
     {
+        DS1SummonCalcController v;
+
         protected FirstViewController(IntPtr handle) : base(handle)
         {
             // Note: this .ctor should not contain any initialization logic.
@@ -15,6 +17,10 @@ namespace SoulsUtility
         {
             base.ViewDidLoad();
             // Perform any additional setup after loading the view, typically from a nib.
+
+            v = DS1SummonCalcController.Create();
+            v.Frame = View.Frame;
+            View.AddSubview(v);
         }
 
         public override void DidReceiveMemoryWarning()

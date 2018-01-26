@@ -2,16 +2,17 @@ using Foundation;
 using System;
 using UIKit;
 using System.Collections.Generic;
+using ObjCRuntime;
 
 namespace SoulsUtility
 {
     public partial class DS2SummonCalcController : UIView
     {
-        
-        //ItemUsed;
-        static List<item> items = new List<item>;
 
-  
+        //ItemUsed;
+        static List<item> items = new List<item>();
+
+
         //tool = items[0];
         static int min = 0;
         static int minring = 0;
@@ -19,7 +20,7 @@ namespace SoulsUtility
         static int maxring = 40000;
         static List<int> tier = new List<int>();
 
-        public DS2SummonCalcController (IntPtr handle) : base (handle)
+        public DS2SummonCalcController(IntPtr handle) : base(handle)
         {
             items.Add(new item("White Sign Soapstone", 1, 3, true));
             items.Add(new item("Small White Sign Soapstone", 2, 4, true));
@@ -75,6 +76,16 @@ namespace SoulsUtility
             tier.Add(20000000);
         }
 
+        public static DS2SummonCalcController Create()
+        {
+
+            var arr = NSBundle.MainBundle.LoadNib("DS2SummonCalcController", null, null);
+            var v = Runtime.GetNSObject<DS2SummonCalcController>(arr.ValueAt(0));
+
+            return v;
+        }
+
+
         partial void Calc_TouchUpInside(UIButton sender)
         {
             int level = int.Parse(LevelInput.Text);
@@ -86,7 +97,7 @@ namespace SoulsUtility
             //ds2calculate(level,items.Find(ItemUsed.Selected));
         }
 
-        public static void ds2calculate(int ds2Mem,item tool)
+        public static void ds2calculate(int ds2Mem, item tool)
         {
             var tierIndex = -1;
             for (var i = 0; i < tier.Count && tierIndex < 0; i++)
@@ -129,21 +140,24 @@ namespace SoulsUtility
                 maxring = tier[tiersMax + 3];
             }
 
-    }
+        }
 
-    public class item {
+        public class item
+        {
             bool ring;
             int tierUp;
             int tierDown;
-            string itemName; 
-        public item(string name, int down, int up, bool ring){
-            this.itemName = name;
+            string itemName;
+            public item(string name, int down, int up, bool ring)
+            {
+                this.itemName = name;
                 this.tierUp = up;
-            this.tierDown = down;
-            this.ring = ring;
-        }
+                this.tierDown = down;
+                this.ring = ring;
+            }
 
-            public string getItemName(){
+            public string getItemName()
+            {
                 return this.itemName;
             }
 
@@ -161,5 +175,6 @@ namespace SoulsUtility
             {
                 return this.ring;
             }
+        }
     }
 }

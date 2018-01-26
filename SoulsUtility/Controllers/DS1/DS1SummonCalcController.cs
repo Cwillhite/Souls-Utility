@@ -1,6 +1,8 @@
 using Foundation;
 using System;
 using UIKit;
+using System.CodeDom.Compiler;
+using ObjCRuntime;
 
 namespace SoulsUtility
 {
@@ -8,6 +10,15 @@ namespace SoulsUtility
     {
         public DS1SummonCalcController (IntPtr handle) : base (handle)
         {
+        }
+
+        public static DS1SummonCalcController Create()
+        {
+
+            var arr = NSBundle.MainBundle.LoadNib("DS1SummonCalc", null, null);
+            var v = Runtime.GetNSObject<DS1SummonCalcController>(arr.ValueAt(0));
+
+            return v;
         }
 
         partial void Calc_TouchUpInside(UIButton sender)
